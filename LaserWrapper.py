@@ -44,12 +44,11 @@ def Initiate_Laser_Sequence():
                     # be eaten up and potentially lock the Pi.
                     time.sleep(1)
 
-            except Exception, e:
+            except Exception as e:
                 # swallowing exceptions isn't cool, but here we provide an opportunity to
                 # print the exception to an output log, should crontab be configured this way
                 # for debugging.
-                print 'Unhandled exception: {0}'.format(str(e))
-                #print("Unhandled exeption: {0}".format(str(e)))
+                print("Unhandled exeption: {0}".format(str(e)))
 
             except KeyboardInterrupt:
                 run = False
