@@ -103,5 +103,5 @@ def __calibrate_laser(configuration):
 
         laser.calibrate_laser(min_movement, x_max, x_min, y_max, y_min)
 
-    if __name__ == "__main__":
-        Initiate_Laser_Sequence()
+if __name__ == "__main__":
+    Initiate_Laser_Sequence()
