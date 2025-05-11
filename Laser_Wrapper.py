@@ -103,5 +103,3 @@ def __calibrate_laser(configuration):
 
     if __name__ == "__main__":
         Initiate_Laser_Sequence()
-
-default_configuration = '{"run_time": 30, "min_movement": 12, "x_min": 0, "x_max": 90, "y_min": 0, "y_max": 22}'
