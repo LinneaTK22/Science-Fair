@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from Laser import Laser
 import json
 import datetime
