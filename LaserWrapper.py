@@ -12,7 +12,7 @@ start_time = datetime.datetime.now()
 run_time = 0
 engage = False
 
-default_configuration = "{'run_time': 30, 'min_movement': 12, 'x_min': 0, 'x_max': 90, 'y_min': 0, 'y_max': 22 }"
+default_configuration = '{"run_time": 30, "min_movement": 12, "x_min": 0, "x_max": 90, "y_min": 0, "y_max": 22}'
 
 def Initiate_Laser_Sequence():
     global engage
