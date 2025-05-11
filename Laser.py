@@ -57,7 +57,9 @@ class Laser:
         print ("Current position: X: {0}, Y: {1}".format(self.x_position, self.y_position))
 
         # how many steps (how long) should we take to get from old to new position
+        print ("Before X")
         self.x_incrementer = self.__get_position_incrementer(self.x_position, self.x_min, self.x_max)
+        print ("Before Y")
         self.y_incrementer = self.__get_position_incrementer(self.y_position, self.y_min, self.y_max)
 
         for index in range(self.movement_time):
@@ -91,6 +93,7 @@ class Laser:
         return (angle / 18.0) + 2.5
 
     def __get_position_incrementer(self, position, min, max):
+        print ("min_movement: {0}, min: {1}, max: {2}".format(self.min_movement, min, max))
         # randomly pick new position, leaving a buffer +- the min values for adjustment later
         newPosition = random.randint(min + self.min_movement, max - self.min_movement)
         print("New position: {0}".format(newPosition))
