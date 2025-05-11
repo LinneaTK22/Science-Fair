@@ -91,7 +91,7 @@ def __calibrate_laser(configuration):
         # no user defined config, so we'll go with the defaults
         configuration = json.loads(default_configuration)
 
-    print("Starting laser with config: {0}").format(configuration)
+    print("Starting laser with config: {0}".format(configuration))
 
     start_time = datetime.datetime.now()
 
