@@ -107,7 +107,9 @@ class Laser:
         # return the number of steps, or incrementer, we should take to get to the new position
         # this is a convenient way to slow the movement down, rather than seeing very rapid movements
         # from point A to point B
-        return float((newPosition - position) / self.movement_time)
+        steps = float((newPosition - position) / self.movement_time)
+        print ("Steps: {0}".format(steps))
+        return steps
 
     def __get_movement_delay(self):
         return random.uniform(0, 1)
