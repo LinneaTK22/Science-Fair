@@ -44,13 +44,14 @@ def Initiate_Laser_Sequence():
                     # be eaten up and potentially lock the Pi.
                     time.sleep(1)
 
-            except(Exception, e):
+            except Exception, e:
                 # swallowing exceptions isn't cool, but here we provide an opportunity to
                 # print the exception to an output log, should crontab be configured this way
                 # for debugging.
-                print("Unhandled exeption: {0}".format(str(e)))
+                print 'Unhandled exception: {0}'.format(str(e))
+                #print("Unhandled exeption: {0}".format(str(e)))
 
-            except(KeyboardInterrupt):
+            except KeyboardInterrupt:
                 run = False
                 print("KeyboardInterrupt: user quit the program")
                 break
@@ -90,18 +91,19 @@ def __calibrate_laser(configuration):
     if (configuration is None):
         # no user defined config, so we'll go with the defaults
         configuration = json.loads(default_configuration)
-        print("Starting laser with config: {0}").format(configuration)
 
-        start_time = datetime.datetime.now()
+    print("Starting laser with config: {0}").format(configuration)
 
-        run_time = configuration.get("run_time")
-        min_movement = configuration.get("min_movement")
-        x_max = configuration.get("x_max")
-        x_min = configuration.get("x_min")
-        y_max = configuration.get("y_max")
-        y_min = configuration.get("y_min")
+    start_time = datetime.datetime.now()
 
-        laser.calibrate_laser(min_movement, x_max, x_min, y_max, y_min)
+    run_time = configuration.get("run_time")
+    min_movement = configuration.get("min_movement")
+    x_max = configuration.get("x_max")
+    x_min = configuration.get("x_min")
+    y_max = configuration.get("y_max")
+    y_min = configuration.get("y_min")
+
+    laser.calibrate_laser(min_movement, x_max, x_min, y_max, y_min)
 
 if __name__ == "__main__":
     Initiate_Laser_Sequence()
