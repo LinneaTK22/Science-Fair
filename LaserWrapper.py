@@ -102,7 +102,7 @@ def __calibrate_laser(configuration):
     y_max = configuration.get("y_max")
     y_min = configuration.get("y_min")
 
-    laser.calibrate_laser(min_movement, x_max, x_min, y_max, y_min)
+    laser.calibrate_laser(min_movement, x_min, x_max, y_min, y_max)
 
 if __name__ == "__main__":
     Initiate_Laser_Sequence()
