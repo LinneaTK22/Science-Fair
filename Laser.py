@@ -93,7 +93,7 @@ class Laser:
         return (angle / 18.0) + 2.5
 
     def __get_position_incrementer(self, position, min, max):
-        print ("min_movement: {0}, min: {1}, max: {2}".format(self.min_movement, min, max))
+        print ("min_movement: {0}, min: {1}, max: {2}, newMin: {3}, newMax: {4}".format(self.min_movement, min, max, min + self.min_movement, max - self.min_movement))
         # randomly pick new position, leaving a buffer +- the min values for adjustment later
         newPosition = random.randint(min + self.min_movement, max - self.min_movement)
         print("New position: {0}".format(newPosition))
