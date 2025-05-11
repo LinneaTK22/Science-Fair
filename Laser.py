@@ -41,8 +41,10 @@ class Laser:
         
         # turn on the laser and configure the servos
         GPIO.output(GPIO_LASER, 1)
-        self.x_servo = GPIO.PWM(GPIO_X_SERVO, 50)
-        self.y_servo = GPIO.PWM(GPIO_Y_SERVO, 50)
+        if (self.x_servo is None):
+            self.x_servo = GPIO.PWM(GPIO_X_SERVO, 50)
+        if (self.y_servo is None):
+            self.y_servo = GPIO.PWM(GPIO_Y_SERVO, 50)
         
         # start the servo which initializes it, and positions them center on the cartesian plane
         self.x_servo.start(self.__get_position(self.x_position))
